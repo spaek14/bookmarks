@@ -21,7 +21,7 @@ I'd like <Task>.
   So that I can add new bookmark to the list,  
   I'd like to be able to input new bookmark and click a button to add it.  ``
   
-  `As a user,  
+  ``As a user,  
   So that I can remove a bookmark from the list,  
   I'd like to be able to click a button to delete bookmark from the list.  ``
   
