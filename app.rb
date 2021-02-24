@@ -1,9 +1,8 @@
 # frozen_string_literal: true
-require './lib/Bookmark'
+require './lib/bookmark'
 require 'sinatra/base'
-require './lib/List'
+require 'pg'
 class BookmarkManager < Sinatra::Base
-  BOOKMARKS_SOURCE = 'bookmarks'
 
   get '/' do
     erb :index
