@@ -9,7 +9,6 @@ class BookmarkManager < Sinatra::Base
   end
 
   get '/bookmarks' do
-    p ENV
     @list = Bookmark.all
     erb :bookmarks
   end
@@ -20,19 +19,8 @@ class BookmarkManager < Sinatra::Base
 
   post '/bookmarks' do
     url = params[:add_link]
-    connection = PG.connect(dbname: 'bookmark_manager')
-    connection.exec("INSERT INTO bookmarks (url) VALUES('#{url}');")
+    Bookmark.create(url)
     redirect '/bookmarks'
-  end
-
-  get '/delete_bookmark' do
-    # erb :delete_bookmark
-    # @link = params[:delete_link]
-    # connection = PG.connect(dbname: 'bookmark_manager')
-    #   connection.exec("DELETE FROM bookmarks WHEN url = #{@link}")
-    # redirect '/bookmarks'
-
-    "HELLO"
   end
 
   run! if app_file == $PROGRAM_NAME

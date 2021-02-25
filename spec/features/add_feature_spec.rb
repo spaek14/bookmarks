@@ -1,6 +1,5 @@
 feature 'Adding bookmarks' do
   scenario 'A user can add a bookmark' do
-    connection = PG.connect(dbname: 'bookmark_manager_test')
 
     visit('/bookmarks')
 
