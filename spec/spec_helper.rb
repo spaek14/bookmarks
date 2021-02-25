@@ -6,6 +6,7 @@ ENV['ENVIRONMENT'] = 'test'
 RSpec.configure do |config|
   config.before(:each) do
     setup_test_database
+    print "setting up test_database"
   end
 end
 
@@ -14,6 +15,7 @@ require File.join(File.dirname(__FILE__), '..', 'app.rb')
 require 'capybara'
 require 'capybara/rspec'
 require 'rspec'
+require 'pg'
 
 # Tell Capybara to talk to BookmarkManager
 Capybara.app = BookmarkManager
