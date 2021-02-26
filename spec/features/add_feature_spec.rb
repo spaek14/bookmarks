@@ -1,6 +1,5 @@
 feature 'Adding bookmarks' do
   scenario 'A user can add a bookmark' do
-
     visit('/bookmarks')
 
     click_button("add_bookmark")
@@ -8,8 +7,6 @@ feature 'Adding bookmarks' do
     fill_in("add_title", with: "mytitle")
     click_button("submit")
 
-    expect(page).to have_content("myurl.com")
-    expect(page).to have_content("mytitle")
-
+    expect(page).to have_link('mytitle', href: "myurl.com")
   end
 end

@@ -17,8 +17,8 @@ attr_reader :id, :url, :title
       connection = PG.connect(dbname: 'bookmark_manager')
     end
 
-    result = connection.exec('SELECT * FROM bookmarks')
-    result.map { |bookmark| bookmark }
+    result = connection.exec('SELECT * FROM bookmarks;')
+    result.map { |row| Bookmark.new(row['id'], row['url'], row['title']) }
   end
 
   def self.create(url, title)
