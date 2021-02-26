@@ -1,9 +1,15 @@
-<%= @list %>
+<ul>
+  <% @list.each do |bookmark| %>
+  <li><%= bookmark %></li>
+  <% end %>
+</ul>
 
 <form action='/add_bookmark'>
   <input class="btn" type ="submit" id="add_bookmark" value="Add a bookmark">
 </form>
 
-<form action='/delete_bookmark'>
+<!-- <button type="button" onClick="location.href='/add_bookmark'" name="add">Add new bookmark</button> -->
+
+<!-- <form action='/delete_bookmark'>
   <input class="btn" type ="submit" id="delete_bookmark" value="Delete a bookmark">
-</form>
+</form> -->
